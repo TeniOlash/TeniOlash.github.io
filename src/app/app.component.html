@@ -1,0 +1,28 @@
+<!-- <app-cv-section></app-cv-section> -->
+<div class="cv" [ngClass]="{ 'theme2-body': isTheme2 === true }">
+  <header>
+    <a routerLink=""><h1>Olasimoju Teniola</h1></a>
+    <p>Frontend/Mobile Developer</p>
+  </header>
+  <ul class="cv-links">
+    <a routerLink="skills">Skills</a>
+    <a routerLink="contact">Contact</a>
+    <a routerLink="certs">Career</a>
+    <a routerLink="extras">Extras</a>
+  </ul>
+  <main class="cv-items">
+    <section
+      class="cv-content"
+      [ngClass]="{ 'theme2-content': isTheme2 === true }"
+    >
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+  <button
+    class="theme-btn"
+    (click)="toggleTheme($event)"
+    [ngClass]="{ 'theme2-btn': isTheme2 === true }"
+  >
+    {{ !isTheme2 ? "Go to theme 2" : "Go to theme 1" }}
+  </button>
+</div>
